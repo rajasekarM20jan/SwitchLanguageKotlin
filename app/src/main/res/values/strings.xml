@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Kitchen Stories</string>
+    <string name="sign_in_with_google">Sign In with <b><font color="#4285f4">G</font><font color="#ea4335">o</font><font color="#fbbc05">o</font><font color="#4285f4">g</font><font color="#34a853">l</font><font color="#ea4335">e</font></b></string>
+    <string name="title">Name of the Recipe :</string>
+    <string name="ingredients_to_be_added">Ingredients to be added :</string>
+    <string name="description">Procedure :</string>
+    <string name="whip_up_your_culinary_magic_and_share_the_recipe_love_with_us">Whip up your culinary magic and share the recipe love with us!</string>
+    <string name="your_ingredients_are_the_building_blocks_of_your_dish_tell_us_what_you_re_working_with">Your ingredients are the building blocks of your dish - tell us what you\'re working with.</string>
+    <string name="what_s_the_name_of_your_mouthwatering_recipe">What\'s the name of your mouthwatering recipe?</string>
+    <string name="share_a_picture_of_the_dish">Share picture (if any)</string>
+    <string name="get_creative_in_the_kitchen">Get creative in the kitchen!</string>
+
+
+</resources>

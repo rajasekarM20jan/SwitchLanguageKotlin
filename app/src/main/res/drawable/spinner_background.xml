@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+            <item>
+                <shape>
+                    <solid android:color="@android:color/white" />
+                    <corners android:radius="@dimen/activity_margin_10dp" />
+                    <padding android:bottom="@dimen/activity_margin_10dp" android:left="@dimen/activity_margin_10dp" android:right="@dimen/activity_margin_10dp" android:top="@dimen/activity_margin_10dp" />
+                </shape>
+            </item>
+            <item android:drawable="@drawable/drop_down" android:gravity="center_vertical|right" android:right="6dp" />
+        </layer-list>
+    </item>
+</selector>

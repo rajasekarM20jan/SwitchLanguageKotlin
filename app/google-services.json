@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "645538552167",
+    "project_id": "switch-language-kotlin",
+    "storage_bucket": "switch-language-kotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645538552167:android:1d7157b7d7fb156a51b7c2",
+        "android_client_info": {
+          "package_name": "com.example.switchlanguagekotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645538552167-mg2tjqutp83olmlq2rf6rd394ovnnnjg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8BAavbbBSsyd8qbN3riUHLg418b8wwLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645538552167-mg2tjqutp83olmlq2rf6rd394ovnnnjg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
