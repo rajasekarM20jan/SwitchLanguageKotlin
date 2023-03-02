@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_sky_blue"
+    android:background="@drawable/landing_bg"
     android:orientation="vertical"
     android:weightSum="10"
     tools:context=".NewRecipePage">
@@ -12,19 +12,18 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/activity_margin_60dp"
-        android:background="@color/yellow"
         >
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/activity_margin_30dp"
+            android:layout_height="@dimen/activity_margin_60dp"
             android:fontFamily="@font/akaya_telivigala"
             android:text="@string/get_creative_in_the_kitchen"
-            android:textColor="@color/white"
-            android:textAlignment="center"
-            android:textSize="@dimen/activity_margin_24dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/activity_margin_25dp"
+            android:padding="@dimen/activity_margin_10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -54,7 +53,7 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/akaya_telivigala"
                 android:text="@string/title"
-                android:textColor="@color/white"/>
+                android:textColor="@color/textgrey"/>
 
             <EditText
                 android:id="@+id/recipeName"
@@ -72,6 +71,75 @@
                 android:layout_margin="@dimen/activity_margin_5dp"
                 android:padding="@dimen/activity_margin_10dp"/>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_margin_35dp"
+                    android:textSize="@dimen/activity_margin_24dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/activity_margin_15dp"
+                    android:fontFamily="@font/akaya_telivigala"
+                    android:text="@string/time_taken"
+                    android:textColor="@color/textgrey"/>
+
+                <EditText
+                    android:id="@+id/prepTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_margin_50dp"
+                    android:background="@drawable/edit_text"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:maxLength="3"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/akaya_telivigala"
+                    android:textSize="@dimen/activity_margin_16dp"
+                    android:hint="Enter the approximate time in minutes."
+                    android:layout_margin="@dimen/activity_margin_5dp"
+                    android:padding="@dimen/activity_margin_10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_margin_35dp"
+                    android:textSize="@dimen/activity_margin_24dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/activity_margin_15dp"
+                    android:fontFamily="@font/akaya_telivigala"
+                    android:text="@string/dietary"
+                    android:textColor="@color/textgrey"/>
+
+                <RadioGroup
+                    android:id="@+id/dietaryGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    >
+                    <RadioButton
+                        android:id="@+id/vegetarian"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/activity_margin_40dp"
+                        android:layout_weight="1"
+                        android:text="VEG"
+                        android:buttonTint="@color/textgrey"
+                        android:textColor="@color/textgrey"
+                        android:textSize="@dimen/activity_margin_16dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/roboto"/>
+
+                    <RadioButton
+                        android:id="@+id/nonVegetarian"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/activity_margin_40dp"
+                        android:layout_weight="1"
+                        android:text="NON-VEG"
+                        android:buttonTint="@color/textgrey"
+                        android:textColor="@color/textgrey"
+                        android:textSize="@dimen/activity_margin_16dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/roboto"/>
+                </RadioGroup>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/activity_margin_35dp"
@@ -79,14 +147,14 @@
                 android:fontFamily="@font/akaya_telivigala"
                 android:layout_marginTop="@dimen/activity_margin_15dp"
                 android:text="@string/ingredients_to_be_added"
-                android:textColor="@color/white"/>
+                android:textColor="@color/textgrey"/>
 
             <EditText
                 android:id="@+id/ingredientsList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text"
-                android:maxLength="100"
+                android:maxLength="300"
                 android:minHeight="@dimen/activity_margin_150dp"
                 android:gravity="start"
                 android:textColor="@color/black"
@@ -103,14 +171,14 @@
                 android:fontFamily="@font/akaya_telivigala"
                 android:layout_marginTop="@dimen/activity_margin_15dp"
                 android:text="@string/description"
-                android:textColor="@color/white"/>
+                android:textColor="@color/textgrey"/>
 
             <EditText
                 android:id="@+id/procedure"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text"
-                android:maxLength="100"
+                android:maxLength="1000"
                 android:minHeight="@dimen/activity_margin_300dp"
                 android:gravity="start"
                 android:fontFamily="@font/akaya_telivigala"
@@ -146,12 +214,13 @@
             android:textAllCaps="false"
             android:background="@android:color/transparent"
             />
-        <Button
+        <TextView
             android:id="@+id/saveButton"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/activity_margin_50dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Save"
+            android:gravity="center"
             android:fontFamily="@font/akaya_telivigala"
             android:textStyle="bold"
             android:textSize="@dimen/activity_margin_18dp"
