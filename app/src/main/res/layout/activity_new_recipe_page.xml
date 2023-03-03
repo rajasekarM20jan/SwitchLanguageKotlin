@@ -98,7 +98,78 @@
                     android:layout_margin="@dimen/activity_margin_5dp"
                     android:padding="@dimen/activity_margin_10dp"/>
 
-                <TextView
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_margin_35dp"
+                android:textSize="@dimen/activity_margin_24dp"
+                android:fontFamily="@font/akaya_telivigala"
+                android:layout_marginTop="@dimen/activity_margin_15dp"
+                android:text="@string/ingredients_to_be_added"
+                android:textColor="@color/textgrey"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/activity_margin_5dp"
+                android:weightSum="8">
+
+                <EditText
+                    android:layout_width="@dimen/activity_margin_150dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Ingredients"
+                    android:maxLength="100"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:inputType="textNoSuggestions"
+                    android:padding="@dimen/activity_margin_10dp"
+                    android:id="@+id/ingredientName"
+                    android:layout_marginStart="@dimen/activity_margin_10dp"
+                    android:background="@drawable/edit_text"
+                    android:layout_weight="8"/>
+
+                <EditText
+                    android:layout_width="@dimen/activity_margin_100dp"
+                    android:layout_height="wrap_content"
+                    android:hint="count"
+                    android:inputType="textNoSuggestions"
+                    android:maxLength="12"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:layout_marginStart="@dimen/activity_margin_20dp"
+                    android:padding="@dimen/activity_margin_10dp"
+                    android:id="@+id/ingredientCount"
+                    android:background="@drawable/edit_text"
+                    />
+
+                <ImageView
+                    android:id="@+id/ingredientAdd"
+                    android:layout_width="@dimen/activity_margin_40dp"
+                    android:layout_height="@dimen/activity_margin_40dp"
+                    android:layout_marginStart="@dimen/activity_margin_20dp"
+                    android:layout_marginEnd="@dimen/activity_margin_10dp"
+                    android:src="@drawable/add"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+
+            <GridView
+                android:id="@+id/gridViewIng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:numColumns="2"
+                android:listSelector="@android:color/transparent"
+                android:layout_marginTop="@dimen/activity_margin_10dp"
+                android:padding="@dimen/activity_margin_5dp"
+                />
+
+
+
+            <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/activity_margin_35dp"
                     android:textSize="@dimen/activity_margin_24dp"
@@ -108,7 +179,7 @@
                     android:text="@string/dietary"
                     android:textColor="@color/textgrey"/>
 
-                <RadioGroup
+            <RadioGroup
                     android:id="@+id/dietaryGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -139,30 +210,6 @@
                         android:textStyle="bold"
                         android:fontFamily="@font/roboto"/>
                 </RadioGroup>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/activity_margin_35dp"
-                android:textSize="@dimen/activity_margin_24dp"
-                android:fontFamily="@font/akaya_telivigala"
-                android:layout_marginTop="@dimen/activity_margin_15dp"
-                android:text="@string/ingredients_to_be_added"
-                android:textColor="@color/textgrey"/>
-
-            <EditText
-                android:id="@+id/ingredientsList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edit_text"
-                android:maxLength="300"
-                android:minHeight="@dimen/activity_margin_150dp"
-                android:gravity="start"
-                android:textColor="@color/black"
-                android:fontFamily="@font/akaya_telivigala"
-                android:textSize="@dimen/activity_margin_18dp"
-                android:hint="@string/your_ingredients_are_the_building_blocks_of_your_dish_tell_us_what_you_re_working_with"
-                android:layout_margin="@dimen/activity_margin_5dp"
-                android:padding="@dimen/activity_margin_10dp"/>
 
             <TextView
                 android:layout_width="match_parent"

@@ -7,6 +7,10 @@
     android:background="@drawable/landing_bg"
     tools:context=".Dashboard">
 
+
+
+
+
     <androidx.cardview.widget.CardView
         android:id="@+id/addNewRecipe"
         android:layout_width="@dimen/activity_margin_80dp"
