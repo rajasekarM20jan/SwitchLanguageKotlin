@@ -1,40 +1,51 @@
 package com.example.switchlanguagekotlin
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.GridLayout
-import android.widget.GridView
-import android.widget.ImageView
-import android.widget.LinearLayout
-import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.content.res.AppCompatResources
+import android.util.Log
+import android.widget.ListView
 import androidx.cardview.widget.CardView
-import androidx.core.view.marginLeft
-import androidx.core.view.marginStart
-import com.google.android.material.internal.ViewUtils.dpToPx
+import com.example.switchlanguagekotlin.adapter.RecipeListAdapter
+import com.example.switchlanguagekotlin.model.RecipeListModel
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class Dashboard : AppCompatActivity() {
-    lateinit var addNewRecipe:CardView
-
+    lateinit var recipeList:ListView
+    lateinit var recipeData:ArrayList<RecipeListModel>
+    lateinit var rAdapter: RecipeListAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
-        addNewRecipe=findViewById(R.id.addNewRecipe)
+        recipeList=findViewById(R.id.recipeList)
+        val db=Firebase.firestore
+        recipeData= ArrayList();
+        db.collection("RecipeBook").get().addOnSuccessListener { result ->
+            for (document in result) {
+                Log.i(null, "${document.id} => ${document.data}")
+                val recipeName:String=document.id
+                val ingredient:String=document.data.get("ingredients").toString()
+                val dietary:String=document.data.get("dietary").toString()
+                val prepTime:String=document.data.get("prepTime").toString()
+                val procedure:String=document.data.get("procedure").toString()
+                val mealType:String=document.data.get("mealType").toString()
+                Log.i(null, "recipeName : $recipeName")
+                Log.i(null, "ingredient : $ingredient")
+                Log.i(null, "dietary : $dietary")
+                Log.i(null, "prepTime : $prepTime")
+                Log.i(null, "procedure : $procedure")
+                Log.i(null, "mealType : $mealType")
 
-
-        onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true){
-            override fun handleOnBackPressed() {
-                finishAffinity()
+                recipeData.add(RecipeListModel(recipeName,ingredient,prepTime,procedure,dietary,mealType))
+                Log.i(null, "recipeData : $recipeData")
             }
-            })
-        addNewRecipe.setOnClickListener(View.OnClickListener {
-            startActivity(Intent(this,NewRecipePage::class.java))
-        })
+
+            Log.i(null, "onCreate: $recipeData")
+            rAdapter=RecipeListAdapter(this,R.layout.custom_recipe_list,recipeData)
+            recipeList.adapter=rAdapter
+        }
+
+
     }
 
 

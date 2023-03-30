@@ -5,33 +5,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.switchlanguagekotlin.NewRecipePage;
 import com.example.switchlanguagekotlin.R;
-import com.example.switchlanguagekotlin.model.IngredientModel;
+import com.example.switchlanguagekotlin.model.RecipeListModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class IngredientAdapter extends ArrayAdapter<IngredientModel> {
+public class RecipeListAdapter extends ArrayAdapter<RecipeListModel> {
     Context context;
     int resource;
-    ArrayList<IngredientModel> objects;
-    NewRecipePage recipePage;
+    ArrayList<RecipeListModel> objects;
 
-
-    public IngredientAdapter(@NonNull Context context, int resource, @NonNull ArrayList<IngredientModel> objects,NewRecipePage recipePage) {
+    public RecipeListAdapter(@NonNull Context context, int resource, @NonNull ArrayList<RecipeListModel> objects) {
         super(context, resource, objects);
         this.context=context;
         this.resource=resource;
         this.objects=objects;
-        this.recipePage=recipePage;
-
     }
 
     @NonNull
@@ -40,25 +34,25 @@ public class IngredientAdapter extends ArrayAdapter<IngredientModel> {
         LayoutInflater inflater=LayoutInflater.from(context);
         View view=inflater.inflate(resource,null,false);
         ViewHolder viewHolder=new ViewHolder();
-        viewHolder.imageView=view.findViewById(R.id.deleteIngredient);
-        viewHolder.textView=view.findViewById(R.id.ingredientData);
+        viewHolder.dietary=view.findViewById(R.id.dietary);
+        viewHolder.prepTime=view.findViewById(R.id.prepTime);
+        viewHolder.recipeName=view.findViewById(R.id.recipeName);
+        viewHolder.moveToNext=view.findViewById(R.id.moveToNext);
 
-        viewHolder.textView.setText(objects.get(position).getIngredientData());
-
-        viewHolder.imageView.setOnClickListener(new View.OnClickListener() {
+        viewHolder.dietary.setText(objects.get(position).getDietary());
+        viewHolder.recipeName.setText(objects.get(position).getRecipeName());
+        viewHolder.prepTime.setText(objects.get(position).getPreparationTime());
+        viewHolder.moveToNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                objects.remove(position);
-                recipePage.resetAdapter();
-
+                String procedure=objects.get(position).getProcedure();
+                System.out.println("Procedure: "+procedure);
             }
         });
-
         return view;
     }
 
     private static class ViewHolder{
-        TextView textView;
-        ImageView imageView;
+        TextView prepTime,dietary,recipeName,moveToNext;
     }
 }
